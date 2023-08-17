@@ -1,0 +1,24 @@
+{% extends "projects/base.html" %}
+{% block content %}
+    <h1 style="text-align: center;">{{ project.project_name }}</h1>
+    <hr>
+    <small class="font-weight-bold">{{ project.published_on }}</small>
+    <p>{{ project.project_desc }}</p>
+    {% if request.user.is_anonymous %}
+        <button><a href="{% url 'login' %}" style="text-decoration: none;">Work on this</a></button>
+    {% endif %}
+    {% if not is_member and not request.user.is_anonymous %}
+        <button><a href="{% url 'projects:partake' project.id %}" style="text-decoration: none;">Work on This</a></button>
+    {% endif %}
+    <hr>
+    {% if members %}
+    <h2>Members List [{{ project.taken_by }}]</h2>
+    <ul>
+        {% for member in members %}
+        <li>{{ member }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    {% endif %}
+    <a href="{% url 'projects:index' %}" style="text-decoration: none;">Back to Projects</a>
+{% endblock %}
