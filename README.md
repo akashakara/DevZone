@@ -1,11 +1,11 @@
-# Devportal - The project hub
+# DevZone - The project hub
 ## About
-Devportal is a platform where developers from all across the world can work on project ideas submitted by the owner.
+DevZone is a platform where developers from all across the world can work on project ideas submitted by the owner.
 # Installation
 ```sh
 # clone repository
-git clone https://github.com/virajsazzala/devportal.git
-cd devportal
+git clone https://github.com/akashakara/DevZone.git
+cd DevZone
 
 # make a virtual environment
 python -m venv env
